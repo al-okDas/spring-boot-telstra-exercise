@@ -26,7 +26,7 @@ public class OldestUserAccountsController {
 		}catch (HttpClientErrorException ex) {
 			ErrorResource err=new ErrorResource();
 			err.setCode(ex.getStatusCode().toString());
-			err.setMessage(ex.getMessage());
+			err.setMessage(ex.getStatusText());
 			return new ResponseEntity<>(err,ex.getStatusCode());
 		} catch (RestClientException ex) {
 			ErrorResource err=new ErrorResource();
